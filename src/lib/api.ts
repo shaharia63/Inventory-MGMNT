@@ -1,10 +1,11 @@
 // Local API service to replace Supabase
-const API_BASE = 'http://localhost:5000';
+const API_BASE = import.meta.env.VITE_API_URL || window.location.origin;
 
 export interface Category {
   id: string;
   name: string;
   description: string | null;
+  is_active: boolean;
   created_at: string;
   updated_at: string;
 }
