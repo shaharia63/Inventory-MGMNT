@@ -9,6 +9,7 @@ interface User {
 
 interface AuthContextType {
   user: User | null;
+  profile: User | null;
   loading: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signOut: () => Promise<void>;
@@ -67,7 +68,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const isAdmin = user?.role === 'admin';
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signOut, isAdmin }}>
+    <AuthContext.Provider value={{ user, profile: user, loading, signIn, signOut, isAdmin }}>
       {children}
     </AuthContext.Provider>
   );
