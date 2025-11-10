@@ -67,7 +67,7 @@ export default function Layout() {
 
         <div className="absolute bottom-0 w-64 border-t border-gray-200 p-4">
           <div className="px-4 py-2 mb-2">
-            <p className="text-sm font-medium text-gray-900">{profile?.full_name || 'User'}</p>
+            <p className="text-sm font-medium text-gray-900">{profile?.name || 'User'}</p>
             <p className="text-xs text-gray-500">{profile?.role === 'admin' ? 'Administrator' : 'User'}</p>
           </div>
           <button
